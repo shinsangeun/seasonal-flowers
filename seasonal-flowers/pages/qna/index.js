@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
+import Link from 'next/link';
 
 export default function qna() {
     return(
@@ -17,29 +18,14 @@ export default function qna() {
                         {/*<code className={styles.code}>pages/index.js</code>*/}
                     </p>
 
+                    <b>Github > issue</b>
                     <br />
-                    <table>
-                        <th>
-                            순서
-                        </th>
-                        <th>
-                            제목
-                        </th>
-                        <th>
-                            내용
-                        </th>
-                        <tbody>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            3
-                        </td>
-                        </tbody>
-                    </table>
+
+                    <button className={seasonStyles.buttonLink}>
+                        <Link href="https://github.com/shinsangeun/seasonal-flowers/issues/new" className={styles.title}>
+                            👉🏻 이곳에 남겨 주세요!
+                        </Link>
+                    </button>
                 </main>
             </div>
         </>

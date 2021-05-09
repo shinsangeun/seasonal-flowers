@@ -4,18 +4,20 @@ import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
 import Select from 'react-select'
 
+const options = [
+    {id: "", value: "👉🏻 선택"},
+    {id: "spring", value: "🌸 봄 (3~5월)"},
+    {id: "summer", value: "🍀️ 여름 (6~8월)"},
+    {id: "autumn", value: "🍂 가을 (9~11월)"},
+    {id: "winter", value: "☃️ 겨울 (12~2월)"}
+]
+
+const handleChange = (obj) => {
+    console.log("obj:", obj)
+    return console.log("1")
+}
+
 const season = () => {
-    const handleChange = () => {
-        return console.log("1")
-    }
-
-    const options = [
-        {id: "1", value: "🌸 봄 (3~5월)"},
-        {id: "2", value: "🍀️ 여름 (6~8월)"},
-        {id: "3", value: "🍂 가을 (9~11월)"},
-        {id: "4", value: "☃️ 겨울 (12~2월)"}
-    ]
-
     return(
         <>
             <button className={seasonStyles.button}>
@@ -31,12 +33,12 @@ const season = () => {
 
                     <br />
 
-                    <select id="weather" onChange={handleChange()}>
-                        <option id="">👉🏻 선택 </option>
-                        <option id="spring">🌸 봄 (3~5월)</option>
-                        <option id="summer">🍀️ 여름 (6~8월)</option>
-                        <option id="autumn">🍂 가을 (9~11월)</option>
-                        <option id="winter">☃️ 겨울 (12~2월)</option>
+                    <select id="weather" onChange={handleChange}>
+                    {options.map((data, index) => (
+                        <option id={options[index].id} key={options[index].id}>
+                            {options[index].value}
+                        </option>
+                        ))}
                     </select>
                 </main>
             </div>

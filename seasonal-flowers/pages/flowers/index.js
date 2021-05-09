@@ -3,6 +3,22 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
 
+const options = [
+    {id: "", value: "👉🏻 선택"},
+    {id: "cherryBlossom", value: "🌸 벚꽃"},
+    {id: "magnolia", value: "목련"},
+    {id: "forsythia", value: "🌼 개나리"},
+    {id: "rhododendron", value: "🌺 진달래"},
+    {id: "tulipa", value: "🌷 튤립"},
+    {id: "rose", value: "🌹 장미"},
+    {id: "sunflower", value: "🌻 해바라기"}
+]
+
+const handleChange = (obj) => {
+    console.log("obj:", obj)
+    return console.log("1")
+}
+
 export default function flowers() {
     return(
         <>
@@ -18,13 +34,13 @@ export default function flowers() {
                     </p>
 
                     <br />
-                    <select>
-                        <option id="">👉🏻 선택 </option>
-                        <option id="spring">벚꽃</option>
-                        <option id="summer">목련</option>
-                        <option id="autumn">개나리</option>
-                        <option id="winter">진달래</option>
-                        <option id="winter">튤립</option>
+
+                    <select id="flowers" onChange={handleChange}>
+                        {options.map((data, index) => (
+                            <option id={options[index].id} key={options[index].id}>
+                                {options[index].value}
+                            </option>
+                        ))}
                     </select>
                 </main>
             </div>

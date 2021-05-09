@@ -3,7 +3,20 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
 
-export default function location() {
+const options = [
+    {id: "", value: "👉🏻 선택"},
+    {id: "seoul", value: "서울"},
+    {id: "gyunggi", value: "경기"},
+    {id: "incheon", value: "인천"},
+    {id: "jeju", value: "제주"}
+]
+
+const handleChange = (obj) => {
+    console.log("obj:", obj)
+    return console.log("1")
+}
+
+const location = () => {
     return(
         <>
             <button className={seasonStyles.button}>
@@ -18,15 +31,18 @@ export default function location() {
                     </p>
 
                     <br />
-                    <select>
-                        <option id="">👉🏻 선택 </option>
-                        <option id="spring">서울</option>
-                        <option id="summer">경기</option>
-                        <option id="autumn">인천</option>
-                        <option id="winter">제주</option>
+
+                    <select id="location" onChange={handleChange}>
+                        {options.map((data, index) => (
+                            <option id={options[index].id} key={options[index].id}>
+                                {options[index].value}
+                            </option>
+                        ))}
                     </select>
                 </main>
             </div>
         </>
     )
 }
+
+export default location;

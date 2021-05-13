@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
 import Select from 'react-select'
+import {Link} from 'next/link'
 
 const options = [
     {id: "", value: "👉🏻 선택"},
@@ -13,13 +14,19 @@ const options = [
 ]
 
 const handleChange = (obj) => {
-    console.log("obj:", obj)
-    return console.log("1")
+    console.log("obj:", obj.target.value)
+}
+
+const handleClick = (obj) => {
+    console.log("111:", obj);
+
+    return
 }
 
 const season = () => {
     return(
         <>
+            <title className="App-title">🌸 계절별 꽃 개화시기: 계절 선택</title>
             <button className={seasonStyles.button}>
                 <a href="/">🏠 Home</a>
             </button>
@@ -28,7 +35,6 @@ const season = () => {
                     <h1 className={styles.title}>☀️ 계절 선택</h1>
                     <p className={styles.description}>
                         원하시는 계절을 선택해 주세요!
-                        {/*<code className={styles.code}>pages/index.js</code>*/}
                     </p>
 
                     <br />
@@ -40,6 +46,7 @@ const season = () => {
                         </option>
                         ))}
                     </select>
+                    <button onClick={(e) => handleClick(e)}>확인</button>
                 </main>
             </div>
         </>

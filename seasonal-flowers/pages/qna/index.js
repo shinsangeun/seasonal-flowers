@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default function qna() {
     return(
         <>
+            <title className="App-title">💌 계절별 꽃 개화시기: Q&A</title>
             <button className={seasonStyles.button}>
                 <a href="/">🏠 Home</a>
             </button>

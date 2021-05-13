@@ -11,14 +11,19 @@ const options = [
     {id: "jeju", value: "제주"}
 ]
 
-const handleChange = (obj) => {
-    console.log("obj:", obj)
-    return console.log("1")
+let content = '';
+
+const handleChange = (e) => {
+    console.log("e:", e.target.value)
+
+    content.concat(e.target.value);
+    return content;
 }
 
 const location = () => {
     return(
         <>
+            <title className="App-title">⛳ 계절별 꽃 개화시기: 지역 선택</title>
             <button className={seasonStyles.button}>
                 <a href="/">🏠 Home</a>
             </button>
@@ -32,7 +37,7 @@ const location = () => {
 
                     <br />
 
-                    <select id="location" onChange={handleChange}>
+                    <select id="location" onChange={handleChange} value={content}>
                         {options.map((data, index) => (
                             <option id={options[index].id} key={options[index].id}>
                                 {options[index].value}

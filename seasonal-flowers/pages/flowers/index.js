@@ -22,6 +22,7 @@ const handleChange = (obj) => {
 export default function flowers() {
     return(
         <>
+            <title className="App-title">💐 계절별 꽃 개화시기: 꽃 선택</title>
             <button className={seasonStyles.button}>
                 <a href="/">🏠 Home</a>
             </button>

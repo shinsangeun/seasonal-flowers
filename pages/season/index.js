@@ -51,7 +51,8 @@ const season = () => {
                                 {locationOptions[index].value}
                             </option>
                         ))}
-                    </select> <button>검색</button>
+                    </select>
+                    <button>검색</button>
 
                     {/*<table>
                         <thead>

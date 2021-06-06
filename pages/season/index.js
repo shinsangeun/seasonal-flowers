@@ -53,7 +53,7 @@ const season = () => {
                         ))}
                     </select> <button>검색</button>
 
-                    <table>
+                    {/*<table>
                         <thead>
                             <th>
                                 장소
@@ -64,7 +64,7 @@ const season = () => {
                                 경기도 용인
                             </td>
                         </tbody>
-                    </table>
+                    </table>*/}
                 </main>
             </div>
         </>

@@ -10,6 +10,14 @@ npm run dev
 yarn dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -24,22 +32,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
----
-### 계절별 꽃 개화 시기 및 사진 명소 추천
-
-- 사진충들을 위한 계절별 꽃 개화 시기 및 사진 명소 추천
- 
-1. 전국 지도 표출
-2. 계절과 꽃 종류를 선택하면 계절별로 개화 시기와, 명소
-3. (옵션) 엄청 유명한 곳 vs.잘 알려지지 않은 명소
-
-- 봄
-    - 벚꽃, 산철쭉, 개나리, 목련, 민들레
-- 여름
-   - 안개꽃, 나팔꽃, 장미, 백합, 해바라기
-- 가을
-   - 국화, 코스모스, 분꽃, 채송화, 칸나
-- 겨울
-    - 눈이 많이 내리는 명소
-        - ex. 양떼 목장..

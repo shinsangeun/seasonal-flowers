@@ -2,14 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
+import styled from 'styled-components'
+import locationOptions from '../../src/components/data/locationOptions'
 
-const options = [
-    {id: "", value: "👉🏻 선택"},
-    {id: "seoul", value: "서울"},
-    {id: "gyunggi", value: "경기"},
-    {id: "incheon", value: "인천"},
-    {id: "jeju", value: "제주"}
-]
+const SearchBtn = styled.button`
+    border: none;
+    border-radius: 4px;
+    height: 25px;
+    font-size: 18px;
+    background-color: #74b9ff;
+    color: white;
+    :hover{
+        background-color: #99c6f5;
+    }
+`;
 
 let content = '';
 
@@ -38,9 +44,9 @@ const location = () => {
                     <br />
 
                     <select id="location" onChange={handleChange} value={content}>
-                        {options.map((data, index) => (
-                            <option id={options[index].id} key={options[index].id}>
-                                {options[index].value}
+                        {locationOptions.map((data, index) => (
+                            <option id={locationOptions[index].id} key={locationOptions[index].id}>
+                                {locationOptions[index].value}
                             </option>
                         ))}
                     </select>

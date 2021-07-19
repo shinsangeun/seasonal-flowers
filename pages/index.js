@@ -53,6 +53,7 @@ const Home = () => {
         <>
             <Head>
                 <title>계절별 꽃 개화 시기🌸</title>
+                <meta name="google-site-verification" content="o9hhyRd9yDOQIgRL7tNiy02tkoxWEMO-C0Q5q0CnYoM" />
             </Head>
 
             <div className={styles.container}>

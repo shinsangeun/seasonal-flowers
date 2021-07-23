@@ -52,13 +52,13 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>계절별 꽃 개화 시기🌸</title>
+                <title>계절별 꽃 사진 명소 추천🌸</title>
                 <meta name="google-site-verification" content="o9hhyRd9yDOQIgRL7tNiy02tkoxWEMO-C0Q5q0CnYoM" />
             </Head>
 
             <div className={styles.container}>
                 <main className={styles.main}>
-                    <h1 className={styles.title}>계절별 꽃 개화 시기🌸</h1>
+                    <h1 className={styles.title}>계절별 꽃 사진 명소🌸</h1>
                     <br/>
 
                     <Box>

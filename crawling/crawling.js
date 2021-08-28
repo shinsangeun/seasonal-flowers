@@ -1,13 +1,13 @@
 const Insta = require('scraper-instagram');
 const InstaClient = new Insta();
 
-const hashtag = "튤립"
-const location = "중랑천"
+const hashtag = "튤립명소";
+const location = "중랑천";
 const interval = 30;
 const lastPostShortcode = false;
 const fullPosts = false;
 
-InstaClient.searchHashtag(hashtag)
+InstaClient.getHashtag(hashtag)
     .then(hashtags => console.log("hashtags:", hashtags))
     .catch(err => console.error("searchHashtag err:", err));
 

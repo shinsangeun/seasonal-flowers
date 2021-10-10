@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import locationOptions from '../../src/components/data/locationOptions'
 
 const SearchBtn = styled.button`
+    padding: 10px;
     border: none;
     border-radius: 4px;
     height: 25px;
@@ -25,6 +26,18 @@ const handleChange = (obj) => {
 const handleClick = (obj) => {
     console.log("111:", obj.target);
     <Link to={obj.target.value} />
+}
+
+const handle = () => {
+    if (navigator.share) {
+        navigator.share({
+            title: '기록하며 성장하기',
+            text: 'Hello World',
+            url: 'https://shinsangeun.github.io',
+        });
+    }else{
+        alert("공유하기가 지원되지 않는 환경 입니다.")
+    }
 }
 
 const season = () => {
@@ -51,6 +64,9 @@ const season = () => {
                         </p>
                     </div>
                     <SearchBtn><Link href="/location">검색</Link></SearchBtn>
+                    <SearchBtn onClick={handle}>
+                        공유하기
+                    </SearchBtn>
                 </main>
             </div>
         </>

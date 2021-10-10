@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import locationOptions from '../../src/components/data/locationOptions'
 
 const SearchBtn = styled.button`
-    padding: 10px;
+    margin: 10px;
     border: none;
     border-radius: 4px;
     height: 25px;

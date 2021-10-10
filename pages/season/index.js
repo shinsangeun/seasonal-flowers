@@ -64,7 +64,7 @@ const season = () => {
                         </p>
                     </div>
                     <SearchBtn><Link href="/location">검색</Link></SearchBtn>
-                    <SearchBtn onClick={handle}>
+                    <SearchBtn onClick={() => {handle()}}>
                         공유하기
                     </SearchBtn>
                 </main>

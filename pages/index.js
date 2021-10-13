@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import locationOptions from '../src/components/data/locationOptions';
 import weatherOptions from '../src/components/data/weatherOptions';
 import flowerOptions from '../src/components/data/flowerOptions';
+import {useState, useEffect, useMemo} from 'react'
 
 const SearchBtn = styled.button`
     border: none;
@@ -20,15 +21,8 @@ const SearchBtn = styled.button`
 `;
 
 const QnaBtn = styled.button`
-    border: none;
-    border-radius: 4px;
-    height: 25px;
-    font-size: 15px;
-    background-color: black;
-    color: white;
-    :hover{
-        background-color: #FF7493;
-    }
+    border: none;border-radius: 4px;height: 25px;font-size: 15px;background-color: black;color: white;
+    :hover{background-color: #FF7493;}
 `;
 
 const Title = styled.h2`
@@ -44,11 +38,22 @@ const Box = styled.div`
     float: left;
 `;
 
-const handleChange = (obj) => {
-    console.log("obj:", obj.target.value)
-}
+let resultLink = "/season?";
 
 const Home = () => {
+    const [weather, setWeather] = useState('');
+    const [location, setLocation] = useState('');
+    const [flower, setFlower] = useState('');
+    const [link, setLink] = useState(null);
+
+    console.log("resultLink:", resultLink);
+
+    const handleChange = (obj) => {
+        resultLink += `&${obj.target.id}=` + obj.target.value;
+        console.log("result:", resultLink);
+        setLink(resultLink);
+    }
+
     return (
         <>
             <Head>
@@ -102,7 +107,7 @@ const Home = () => {
 
                     <br/>
                     <div>
-                        <SearchBtn><Link href="/season">검색 (Click!) </Link></SearchBtn> &nbsp;
+                        <SearchBtn><Link href={resultLink}>검색 (Click!) </Link></SearchBtn> &nbsp;
                     </div>
                 </main>
                 <footer className={styles.footer}>

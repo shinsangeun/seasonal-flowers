@@ -1,58 +1,57 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
-import seasonStyles from '../../styles/season.module.css'
-import styled from 'styled-components'
+// import styles from '../../styles/Home.module.css'
+// import seasonStyles from '../../styles/season.module.css'
+import styled from 'styled-components';
 import locationOptions from '../../src/components/data/locationOptions'
 
-const SearchBtn = styled.button`
-    border: none;
-    border-radius: 4px;
-    height: 25px;
-    font-size: 18px;
-    background-color: #74b9ff;
-    color: white;
-    :hover{
-        background-color: #99c6f5;
-    }
+const Menu1 = styled.div`
+    display: inline;width: 450px;color: red;border: 1px solid blue;font-size: 20px;
 `;
 
-let content = '';
+const Menu2 = styled.div`
+    display: inline;height: 250px;width: 450px;color: red;font-size: 20px;border: 1px solid blue;
+`
 
-const handleChange = (e) => {
-    console.log("e:", e.target.value)
+const Menu3 = styled.div`
+    display: inline;height: 250px;width: 450px;color: red;font-size: 20px;border: 1px solid blue;
+`
+const Menu4 = styled.div`
+    display: inline;height: 200px;width: 450px;color: red;font-size: 20px;border: 1px solid blue;
+`
 
-    content.concat(e.target.value);
-    return content;
+const handle = () => {
+    if (navigator.share) {
+        navigator.share({
+            title: '기록하며 성장하기',
+            text: 'Hello World',
+            url: 'https://shinsangeun.github.io',
+        });
+    }else{
+        alert("공유하기가 지원되지 않는 환경 입니다.")
+    }
 }
 
 const location = () => {
     return(
-        <>
-            <title className="App-title">⛳ 계절별 꽃 개화시기: 지역 선택</title>
-            <button className={seasonStyles.button}>
-                <a href="/">🏠 Home</a>
-            </button>
-            <div className={styles.container}>
-                <main className={styles.main}>
-                    <h1 className={styles.title}>⛳️ 지역 선택</h1>
-                    <p className={styles.description}>
-                        원하시는 지역을 선택해 주세요!
-                        {/*<code className={styles.code}>pages/index.js</code>*/}
-                    </p>
-
-                    <br />
-
-                    <select id="location" onChange={handleChange} value={content}>
-                        {locationOptions.map((data, index) => (
-                            <option id={locationOptions[index].id} key={locationOptions[index].id}>
-                                {locationOptions[index].value}
-                            </option>
-                        ))}
-                    </select>
-                </main>
-            </div>
-        </>
+        <div>
+            <ul style={{display: 'inline-block'}}>
+                <Menu1>Menu 1</Menu1>
+                <Menu2>Menu 2</Menu2>
+                <Menu3>Menu 3</Menu3>
+                <Menu4>Menu 4</Menu4>
+                <button onClick={handle}>
+                    공유하기
+                </button>
+                <Image
+                    src="https://image-component.nextjs.gallery/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmountains.cd25efdd.jpg&w=1920&q=75"
+                    width="850px"
+                    height="400px"
+                    placeholder="blur"
+                    blurDataURL="yellow"
+                />
+            </ul>
+        </div>
     )
 }
 

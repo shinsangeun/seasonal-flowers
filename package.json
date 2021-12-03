@@ -11,7 +11,7 @@
     "@emotion/react": "^11.4.0",
     "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^10.0.0",
-    "next": "10.2.0",
+    "next": "^10.2.0",
     "pm2": "^5.1.2",
     "puppeteer": "^10.1.0",
     "react": "17.0.2",
@@ -19,5 +19,10 @@
     "react-select": "^4.3.1",
     "scraper-instagram": "^1.0.17",
     "styled-components": "^5.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react": "^6.24.1"
   }
 }

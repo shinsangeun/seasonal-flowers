@@ -20,6 +20,14 @@ const Menu4 = styled.div`
     display: inline;height: 200px;width: 450px;color: red;font-size: 20px;border: 1px solid blue;
 `
 
+const Menu5 = styled.div`
+    height: 100px;width: 80%;color: red;border: 1px solid blue;font-size: 20px;position: absolute;margin: 20px;
+`;
+
+const Menu6 = styled.div`
+    height: 50px;width: 50%;color: red;font-size: 20px;border: 1px solid blue;position: relative;margin: 10px;left: 20px;
+`
+
 const handle = () => {
     if (navigator.share) {
         navigator.share({
@@ -32,9 +40,18 @@ const handle = () => {
     }
 }
 
+const handleLink = (event, type) => {
+    event.stopPropagation();
+    if(type === "blog"){
+       window.location.href = "https://shinsangeun.github.io/";
+    }else{
+       window.location.href = "https://github.com/shinsangeun";
+    }
+}
+
 const location = () => {
     return(
-        <div>
+        <>
             <ul style={{display: 'inline-block'}}>
                 <Menu1>Menu 1</Menu1>
                 <Menu2>Menu 2</Menu2>
@@ -51,7 +68,13 @@ const location = () => {
                     blurDataURL="yellow"
                 />
             </ul>
-        </div>
+            <Menu5 onClick={(event) => handleLink(event, "blog")}>
+                블로그 링크 이동!
+                <Menu6 onClick={(event) => handleLink( event,"github")}>
+                    github 링크 이동!
+                </Menu6>
+            </Menu5>
+        </>
     )
 }
 

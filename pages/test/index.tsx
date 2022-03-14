@@ -14,9 +14,9 @@ const Text = styled.input`
 const FileWrap = styled.div`
     & {position:relative; height:42px; margin-top:12px; border:1px solid #dddee4;}
     input {z-index:1; position:absolute; left:-1px; top:-1px; width:109px; height:44px; opacity:0;}
-    .btn {position:absolute; left:-1px; top:-1px; width:109px; height:44px; background-color:#99c6f5; text-align:center;}
+    .btn {position:relative; left:0px; top:-18px; width:100px; height:41px; background-color:#99c6f5; text-align:center;float: right;}
     .btn span {position:relative; top:11px; display:inline-block; color:#fff; font-size:15px; font-weight:700; line-height:21px; letter-spacing:-0.15px; vertical-align:0;}
-    .text {position:relative; top:11px; overflow:hidden; color:#222; margin:0 41px 0 118px; font-size:15px; font-weight:400; line-height:21px; letter-spacing:-0.6px; vertical-align:0;
+    .text {position:relative; top:11px; overflow:hidden; color:#222; margin:0 10px; font-size:14px;vertical-align:0;
         text-overflow:ellipsis; white-space:nowrap;
     }
 `;
@@ -250,27 +250,27 @@ const index = () => {
 
     return(
         <>
-            <h1>회원 가입</h1>
+            <h1>게시글 등록</h1>
             <Text type="text" name="name" onChange={onChangeName} placeholder={"*이름"}/>
-            <Text type="number" name="phone" onChange={onChangePhone} placeholder={"*휴대폰"}/>
-            <Text type="text" name="email" onChange={onChangeEmail} placeholder={"이메일"}/>
+            {/*<Text type="number" name="phone" onChange={onChangePhone} placeholder={"*휴대폰"}/>*/}
+            {/*<Text type="text" name="email" onChange={onChangeEmail} placeholder={"이메일"}/>*/}
             <Text type="text" name="title" onChange={onChangeTitle} placeholder={"*제목"}/>
             {/*@ts-ignore*/}
             <Contents type="text" name="content" onChange={onChangeContent} placeholder={"*내용"}/>
             {/*@ts-ignore*/}
             <FileWrap>
                 <Text type="file" id="attachFile" name="attachFile" onChange={onChangeAttach} accept="video/*" placeholder={"첨부파일"} />
-                <div className="btn"><span>파일선택</span></div>
                 <div className="text">{attachFilename === '' ? '파일을 선택해주세요' : attachFilename}</div>
+                <div className="btn"><span>파일선택</span></div>
             </FileWrap>
             {/*/!*@ts-ignore*!/*/}
             {(attach !== '' && isAttach)|| attachFilename !== '' ? <Close onClick={onReset}/>: <></>}
             <ConsentDescription className={"description"}>파일은 최대 1개, 300MB 까지 가능 합니다.</ConsentDescription><br/>
-            <input style={{display: 'inline-block'}} className={"input-txt"} type="checkbox" id="check" onChange={e => {changeHandler(e.currentTarget.checked, 'check')}}/>
-            <p style={{display: 'inline-block'}}>회원 가입 동의</p>
+            {/*<input style={{display: 'inline-block'}} className={"input-txt"} type="checkbox" id="check" onChange={e => {changeHandler(e.currentTarget.checked, 'check')}}/>*/}
+            {/*<p style={{display: 'inline-block'}}>회원 가입 동의</p>*/}
             {/*@ts-ignore*/}
             <Submit onClick={() => onSubmit()}>
-                <SubmitText>가입하기</SubmitText>
+                <SubmitText>등록</SubmitText>
             </Submit>
         </>
     )

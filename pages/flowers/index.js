@@ -1,7 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
+import styled from 'styled-components'
+
+const SearchBtn = styled.button`
+    margin: 10px;border: none;border-radius: 4px;height: 25px;font-size: 18px;background-color: #74b9ff;color: white;
+    :hover{background-color: #99c6f5;}
+`;
 
 const options = [
     {id: "", value: "👉🏻 선택"},
@@ -43,6 +47,7 @@ export default function flowers() {
                             </option>
                         ))}
                     </select>
+                    <SearchBtn>검색</SearchBtn>
                 </main>
             </div>
         </>

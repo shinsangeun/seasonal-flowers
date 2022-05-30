@@ -5,19 +5,11 @@ import styled from 'styled-components'
 import locationOptions from '../src/components/data/locationOptions';
 import weatherOptions from '../src/components/data/weatherOptions';
 import flowerOptions from '../src/components/data/flowerOptions';
-import {useState, useEffect, useMemo} from 'react'
+import {useState} from 'react'
 
 const SearchBtn = styled.button`
-    border: none;
-    border-radius: 4px;
-    height: 40px;
-    width: 200px;
-    font-size: 20px;
-    background-color: #FF7493;
-    color: white;
-    :hover{
-        background-color: #99c6f5;
-    }
+    border: none;border-radius: 4px;height: 40px;width: 200px;font-size: 20px;background-color: #FF7493;color: white;
+    :hover{background-color: #99c6f5;}
 `;
 
 const QnaBtn = styled.button`
@@ -30,23 +22,13 @@ const Title = styled.h2`
 `;
 
 const Box = styled.div`
-    border: none;
-    padding:10px;
-    border-bottom: 3px solid #FFCAD5;
-    height: 150px;
-    width: 700px;
-    float: left;
+    border: none;padding:10px;border-bottom: 3px solid #FFCAD5;height: 150px;width: 700px;float: left;
 `;
 
 let resultLink = "/season?";
 
 const Home = () => {
-    const [weather, setWeather] = useState('');
-    const [location, setLocation] = useState('');
-    const [flower, setFlower] = useState('');
     const [link, setLink] = useState(null);
-
-    console.log("resultLink:", resultLink);
 
     const handleChange = (obj) => {
         resultLink += `&${obj.target.id}=` + obj.target.value;

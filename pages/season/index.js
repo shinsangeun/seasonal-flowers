@@ -1,31 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import seasonStyles from '../../styles/season.module.css'
 import Link from 'next/link'
 import styled from 'styled-components'
 import locationOptions from '../../src/components/data/locationOptions'
+import useSWR from 'swr'
+import axios from 'axios'
 
 const SearchBtn = styled.button`
-    margin: 10px;
-    border: none;
-    border-radius: 4px;
-    height: 25px;
-    font-size: 18px;
-    background-color: #74b9ff;
-    color: white;
-    :hover{
-        background-color: #99c6f5;
-    }
+    margin: 10px;border: none;border-radius: 4px;height: 25px;font-size: 18px;background-color: #74b9ff;color: white;
+    :hover{background-color: #99c6f5;}
 `;
 
 const handleChange = (obj) => {
     console.log("obj:", obj.target.value)
-}
-
-const handleClick = (obj) => {
-    console.log("111:", obj.target);
-    <Link to={obj.target.value} />
 }
 
 const handle = () => {
@@ -41,6 +28,11 @@ const handle = () => {
 }
 
 const season = () => {
+    const fetcher = url => axios.get(url).then(res => res.data)
+
+    const {data, error} = useSWR(`/api/hello`, fetcher)
+    console.log("data==>", data);
+
     return(
         <>
             <title className="App-title">🌸 계절별 꽃 개화시기: 계절 선택</title>
@@ -50,7 +42,6 @@ const season = () => {
             <div className={styles.container}>
                 <main className={styles.main}>
                     <h2 className={styles.title}>🌹 여행지 추천</h2>
-
                     <h2>⛳️ 지역 선택</h2>
                     <div>
                         <p>원하시는 지역을 선택해 주세요! &nbsp;&nbsp;
@@ -64,9 +55,7 @@ const season = () => {
                         </p>
                     </div>
                     <SearchBtn><Link href="/location">검색</Link></SearchBtn>
-                    <SearchBtn onClick={() => {handle()}}>
-                        공유하기
-                    </SearchBtn>
+                    <SearchBtn onClick={() => {handle()}}>공유하기</SearchBtn>
                 </main>
             </div>
         </>

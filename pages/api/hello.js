@@ -1,5 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-export default (req, res) => {
-  res.status(200).json({ name: 'John Doe' })
+export default function handler(req, res) {
+  if (req.method === 'GET') {
+    // Process a GET request
+    res.status(200).json({ rose: {seoul: '테스트'}})
+  } else {
+    // Handle any other HTTP method
+  }
 }

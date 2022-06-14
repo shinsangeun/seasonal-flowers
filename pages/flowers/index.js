@@ -23,7 +23,7 @@ const handleChange = (obj) => {
     return console.log("1")
 }
 
-export default function flowers() {
+const flowers = () => {
     return(
         <>
             <title className="App-title">💐 계절별 꽃 개화시기: 꽃 선택</title>
